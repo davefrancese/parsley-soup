@@ -13,12 +13,12 @@ export const allSoups = () => async dispatch => {
 
 export const updateSoup = (id, update) => async dispatch => {
   console.log("reached action - ", id, update);
-  // const res = await axios.put(`/api/allsoups/${id}`, update);
-  const res = axios({
-    method: "put",
-    url: `/api/allsoups/${id}`,
-    body: update
-  });
+  const res = await axios.put(`/api/allsoups/${id}`, update);
+  // const res = axios({
+  //   method: "put",
+  //   url: `/api/allsoups/${id}`,
+  //   body: update
+  // });
   console.log("after action -> to dispatch");
   dispatch({ type: "UPDATE_SOUP", payload: res.data });
 };
