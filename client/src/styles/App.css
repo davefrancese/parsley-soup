@@ -1,0 +1,18 @@
+/* creme: #f5f0da */
+/* dark green: #02a951 */
+/* light green: #9fce6a */
+
+.App-soups {
+  margin: 50px auto;
+  max-width: 500px;
+  text-align: center;
+}
+
+.App-soups li {
+  background: #f5f0da;
+}
+
+.Soup-type {
+  font-size: 0.5rem;
+  color: #9fce6a;
+}

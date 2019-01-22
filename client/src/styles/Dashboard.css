@@ -1,0 +1,17 @@
+.Dashboard {
+  background: #02a951;
+  padding: 10px;
+  margin: 20px;
+}
+
+.card {
+  margin-top: 5px;
+}
+
+button {
+  margin-right: 5px;
+}
+
+span {
+  margin-right: 5px;
+}

@@ -1,0 +1,25 @@
+/* creme: #f5f0da */
+/* dark green: #02a951 */
+/* light green: #9fce6a */
+
+body {
+  background: #f5f0da;
+  margin: 20px;
+}
+
+h1 {
+  color: #02a951;
+}
+
+h6 {
+  color: #02a951;
+}
+
+h4 {
+  color: #02a951;
+}
+
+.sub-title {
+  color: #02a951;
+  margin-top: -5px;
+}
