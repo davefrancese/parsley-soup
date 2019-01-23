@@ -12,19 +12,28 @@ export const allSoups = () => async dispatch => {
 };
 
 export const updateSoup = (id, update) => async dispatch => {
-  console.log("reached action - ", id, update);
   const res = await axios.put(`/api/allsoups/${id}`, update);
-  // const res = axios({
-  //   method: "put",
-  //   url: `/api/allsoups/${id}`,
-  //   body: update
-  // });
-  console.log("after action -> to dispatch");
   dispatch({ type: "UPDATE_SOUP", payload: res.data });
+};
+
+export const fetchDate = () => async dispatch => {
+  const res = await axios.get("/api/date");
+  dispatch({ type: "FETCH_DATE", payload: res.data });
+};
+
+export const updateDate = event => async dispatch => {
+  event.preventDefault();
+  console.log("action", event.target.date.value);
+  const update = { date: event.target.date.value };
+  const res = await axios.put(`/api/date/change`, update);
+  console.log("res.data=", res.data);
+  dispatch({ type: "UPDATE_DATE", payload: res.data });
 };
 
 export default {
   fetchSoups,
   allSoups,
-  updateSoup
+  updateSoup,
+  fetchDate,
+  updateDate
 };

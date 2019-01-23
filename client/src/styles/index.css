@@ -23,3 +23,7 @@ h4 {
   color: #02a951;
   margin-top: -5px;
 }
+
+.secret {
+  text-align: right;
+}

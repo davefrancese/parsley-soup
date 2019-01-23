@@ -6,8 +6,13 @@ import "../styles/Dashboard.css";
 import * as actions from "../actions";
 
 class Dashboard extends Component {
+  state = {
+    allSoups: []
+  };
+
   componentDidMount() {
     this.props.allSoups();
+    this.props.fetchDate();
   }
 
   renderAllSoups() {
@@ -49,18 +54,47 @@ class Dashboard extends Component {
                   <button
                     onClick={() =>
                       this.props.updateSoup(soup._id, {
-                        isDaily: false
+                        isDaily: false,
+                        isLow: false,
+                        isOut: false
                       })
                     }
                     className="btn btn-danger "
                   >
                     Remove
                   </button>
-                  <button className="btn btn-warning">Getting Low</button>
-                  <button className="btn btn-dark">Ran Out</button>
+                  <button
+                    onClick={() =>
+                      this.props.updateSoup(soup._id, {
+                        isLow: true
+                      })
+                    }
+                    className="btn btn-warning"
+                  >
+                    Getting Low
+                  </button>
+                  <button
+                    onClick={() =>
+                      this.props.updateSoup(soup._id, {
+                        isOut: true
+                      })
+                    }
+                    className="btn btn-dark"
+                  >
+                    Ran Out
+                  </button>
                 </div>
               ) : (
-                <button className="btn btn-primary">Make Daily</button>
+                <button
+                  onClick={event =>
+                    this.props.updateSoup(soup._id, {
+                      isDaily: true
+                    })
+                  }
+                  className="btn btn-primary"
+                >
+                  Make Daily
+                </button>
               )}
             </div>
           </div>
@@ -69,7 +103,7 @@ class Dashboard extends Component {
     } else {
       return (
         <div>
-          <p>Loading</p>
+          <p>Try refreshing the page.</p>
         </div>
       );
     }
@@ -80,8 +114,28 @@ class Dashboard extends Component {
     return (
       <div className="Dashboard">
         <h2>Dashboard</h2>
+        Date set to:{" "}
+        <span className="badge badge-success">
+          {this.props.dateReducer.length > 0
+            ? this.props.dateReducer[0].date
+            : "No Soups Today"}
+        </span>
+        <form
+          className="form-group"
+          onSubmit={event => this.props.updateDate(event)}
+        >
+          <input
+            className="form-control form-control-sm date-input"
+            type="text"
+            name="date"
+            placeholder="Today's Date"
+          />
+          <button className="btn btn-primary save-date" type="submit">
+            Save
+          </button>
+        </form>
         <Link to="/">
-          <p>Daily Soups</p>
+          <button className="btn btn-light back-link">Daily Soups</button>
         </Link>
         {this.renderAllSoups()}
       </div>
@@ -89,8 +143,13 @@ class Dashboard extends Component {
   }
 }
 
-function mapStateToProps({ soupsReducer, updateSoup }) {
-  return { soupsReducer, updateSoup };
+function mapStateToProps({
+  soupsReducer,
+  updateSoup,
+  updateDate,
+  dateReducer
+}) {
+  return { soupsReducer, updateSoup, updateDate, dateReducer };
 }
 
 export default connect(

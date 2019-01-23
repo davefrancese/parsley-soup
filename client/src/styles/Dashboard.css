@@ -15,3 +15,15 @@ button {
 span {
   margin-right: 5px;
 }
+
+.date-input {
+  max-width: 300px;
+}
+
+.save-date {
+  margin-top: 5px;
+}
+
+.back-link {
+  margin-bottom: 5px;
+}

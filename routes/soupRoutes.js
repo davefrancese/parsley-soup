@@ -16,9 +16,9 @@ module.exports = app => {
     res.send(daily);
   });
 
+  // make put method
   app.put("/api/allsoups/:id", async (req, res) => {
-    // res.send(req.params.id);
-    console.log("backend", req.params.id, req.body);
+    console.log("req.params.id=", req.params.id);
     const data = await Soups.findByIdAndUpdate(
       req.params.id,
       req.body,
@@ -27,6 +27,32 @@ module.exports = app => {
         if (err) {
           return res.status(500).send(err);
         } else {
+          return res.send(data);
+        }
+      }
+    );
+  });
+
+  app.get("/api/date", async (req, res) => {
+    const data = await Soups.find();
+    const date = data.filter(soup => {
+      return soup.name === "date";
+    });
+    res.send(date);
+  });
+
+  app.put("/api/date/change", async (req, res) => {
+    console.log("req.body=", req.body);
+    // const id = "5c47d10fe7179a5449415445";
+    const data = await Soups.findOneAndUpdate(
+      { name: "date" },
+      req.body,
+      { new: true },
+      (err, data) => {
+        if (err) {
+          return res.status(500).send(err);
+        } else {
+          console.log("sending data back", data);
           return res.send(data);
         }
       }

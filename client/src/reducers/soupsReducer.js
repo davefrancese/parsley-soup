@@ -5,7 +5,6 @@ export default function(state = {}, action) {
     case "ALL_SOUPS":
       return action.payload;
     case "UPDATE_SOUP":
-      console.log("reached reducer=", action.payload);
       return action.payload;
     default:
       return state;

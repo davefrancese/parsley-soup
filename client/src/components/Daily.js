@@ -9,12 +9,13 @@ class Daily extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      today: "January 2, 2019"
+      today: "No Soup Today"
     };
   }
 
   componentDidMount() {
     this.props.fetchSoups();
+    this.props.fetchDate();
   }
 
   renderDailySoups() {
@@ -52,6 +53,7 @@ class Daily extends Component {
   }
 
   render() {
+    console.log(this.props);
     return (
       <div className="App">
         <div>
@@ -60,22 +62,26 @@ class Daily extends Component {
           <p className="sub-title">
             Made from scratch
             <br />
-            <span className="badge badge-success">{this.state.today}</span>
+            <span className="badge badge-success">
+              {this.props.dateReducer.length > 0
+                ? this.props.dateReducer[0].date
+                : "No Soups Today"}
+            </span>
           </p>
-          <Link to="/dashboard">
-            <p>Dashboard</p>
-          </Link>
           <div className="App-soups">
             <ul className="list-group">{this.renderDailySoups()}</ul>
           </div>
         </div>
+        <Link to="/dashboard">
+          <p className="secret">.</p>
+        </Link>
       </div>
     );
   }
 }
 
-function mapStateToProps({ soupsReducer }) {
-  return { soupsReducer };
+function mapStateToProps({ soupsReducer, dateReducer }) {
+  return { soupsReducer, dateReducer };
 }
 
 export default connect(
