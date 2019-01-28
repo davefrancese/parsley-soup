@@ -23,9 +23,9 @@ export const fetchDate = () => async dispatch => {
 
 export const updateDate = event => async dispatch => {
   event.preventDefault();
-  console.log("action", event.target.date.value);
+  console.log("update", event.target.date.value);
   const update = { date: event.target.date.value };
-  const res = await axios.put(`/api/date/change`, update);
+  const res = await axios.put("/api/date/change", update);
   console.log("res.data=", res.data);
   dispatch({ type: "UPDATE_DATE", payload: res.data });
 };

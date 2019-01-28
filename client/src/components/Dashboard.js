@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 
 import "../styles/Dashboard.css";
+import SoupList from "./SoupList";
 import * as actions from "../actions";
 
 class Dashboard extends Component {
@@ -15,102 +16,7 @@ class Dashboard extends Component {
     this.props.fetchDate();
   }
 
-  renderAllSoups() {
-    if (this.props.soupsReducer.length > 0) {
-      const { soupsReducer } = this.props;
-      return soupsReducer.map(soup => {
-        return (
-          <div key={soup.name} className="card">
-            <div
-              className={`card-header ${
-                soup.isDaily ? "alert alert-primary" : null
-              }`}
-            >
-              {soup.isDaily ? (
-                <span className="badge badge-primary badge-pill">
-                  Daily Soup
-                </span>
-              ) : (
-                "Soup"
-              )}
-            </div>
-            <div className="card-body">
-              <h5 className="card-title">{soup.name}</h5>
-              <p className="card-text">
-                {soup.isLow ? (
-                  <span className="badge badge-warning badge-pill">
-                    This soup is marked as LOW.
-                  </span>
-                ) : null}
-                {soup.isOut ? (
-                  <span className="badge badge-dark badge-pill">
-                    This soup is marked as OUT.
-                  </span>
-                ) : null}
-              </p>
-
-              {soup.isDaily ? (
-                <div>
-                  <button
-                    onClick={() =>
-                      this.props.updateSoup(soup._id, {
-                        isDaily: false,
-                        isLow: false,
-                        isOut: false
-                      })
-                    }
-                    className="btn btn-danger "
-                  >
-                    Remove
-                  </button>
-                  <button
-                    onClick={() =>
-                      this.props.updateSoup(soup._id, {
-                        isLow: true
-                      })
-                    }
-                    className="btn btn-warning"
-                  >
-                    Getting Low
-                  </button>
-                  <button
-                    onClick={() =>
-                      this.props.updateSoup(soup._id, {
-                        isOut: true
-                      })
-                    }
-                    className="btn btn-dark"
-                  >
-                    Ran Out
-                  </button>
-                </div>
-              ) : (
-                <button
-                  onClick={event =>
-                    this.props.updateSoup(soup._id, {
-                      isDaily: true
-                    })
-                  }
-                  className="btn btn-primary"
-                >
-                  Make Daily
-                </button>
-              )}
-            </div>
-          </div>
-        );
-      });
-    } else {
-      return (
-        <div>
-          <p>Try refreshing the page.</p>
-        </div>
-      );
-    }
-  }
-
   render() {
-    console.log(this.props);
     return (
       <div className="Dashboard">
         <h2>Dashboard</h2>
@@ -137,7 +43,7 @@ class Dashboard extends Component {
         <Link to="/">
           <button className="btn btn-light back-link">Daily Soups</button>
         </Link>
-        {this.renderAllSoups()}
+        <SoupList />
       </div>
     );
   }

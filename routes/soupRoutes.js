@@ -18,7 +18,6 @@ module.exports = app => {
 
   // make put method
   app.put("/api/allsoups/:id", async (req, res) => {
-    console.log("req.params.id=", req.params.id);
     const data = await Soups.findByIdAndUpdate(
       req.params.id,
       req.body,
@@ -43,9 +42,9 @@ module.exports = app => {
 
   app.put("/api/date/change", async (req, res) => {
     console.log("req.body=", req.body);
-    // const id = "5c47d10fe7179a5449415445";
-    const data = await Soups.findOneAndUpdate(
-      { name: "date" },
+    const id = "5c47d10fe7179a5449415445";
+    const data = await Soups.findByIdAndUpdate(
+      id,
       req.body,
       { new: true },
       (err, data) => {
