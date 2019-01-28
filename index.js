@@ -26,6 +26,7 @@ app.use(
 require("./routes/soupRoutes")(app);
 require("./routes/auth")(app);
 
+// heroku setup
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 
