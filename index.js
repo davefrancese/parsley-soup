@@ -6,12 +6,11 @@ const bodyParser = require("body-parser");
 const cookieSession = require("cookie-session");
 const mongoose = require("mongoose");
 const keys = require("./config/keys");
-
-const app = express();
-
 const PORT = process.env.PORT || 8000;
 
 mongoose.connect(keys.mongoURI);
+
+const app = express();
 
 app.use(bodyParser.json());
 app.use(methodOverride("X-HTTP-Method-Override")); //Google/GData
