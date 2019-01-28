@@ -5,7 +5,7 @@ require("./models/Soup");
 const bodyParser = require("body-parser");
 const cookieSession = require("cookie-session");
 const mongoose = require("mongoose");
-const keys = require("./config/dev");
+const keys = require("./config/keys");
 
 const app = express();
 
