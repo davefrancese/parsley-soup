@@ -25,4 +25,6 @@ module.exports = {
 - [ ] Rerender soupList component after updating soup action
 - [ ] Update Date action to put event.target in database -> Rerender
 - [ ] Finish styling
+- [ ] Remove link to dashboard
+- [ ] Rename dashboard path
 - [ ] Redeploy
