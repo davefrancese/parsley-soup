@@ -23,13 +23,11 @@ app.use(
 );
 
 require("./routes/soupRoutes")(app);
-require("./routes/auth")(app);
 
-// heroku deploy 3
 if (process.env.NODE_ENV === "production") {
-  const path = require("path");
-  app.use(express.static(path.join(__dirname, "client/build")));
+  app.use(express.static("client/build"));
 
+  const path = require("path");
   app.get("*", (req, res) => {
     res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
   });
