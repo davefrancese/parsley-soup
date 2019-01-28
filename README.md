@@ -18,4 +18,4 @@ module.exports = {
 };
 ```
 
-- save file in directory called config and name the file dev.js
+- save file in a directory called config and name the file dev.js
