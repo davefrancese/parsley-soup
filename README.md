@@ -20,7 +20,8 @@ module.exports = {
 
 - save file in a directory called config and name the file dev.js
 
-#TODO
+# TODO
+
 [] Rerender soupList component after updating soup action
 [] Update Date action to put event.target in database -> Rerender
 [] Finish styling
