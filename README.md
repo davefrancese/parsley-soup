@@ -22,7 +22,7 @@ module.exports = {
 
 # TODO
 
-[] Rerender soupList component after updating soup action
-[] Update Date action to put event.target in database -> Rerender
-[] Finish styling
-[] Redeploy
+- [ ] Rerender soupList component after updating soup action
+- [ ] Update Date action to put event.target in database -> Rerender
+- [ ] Finish styling
+- [ ] Redeploy
