@@ -90,7 +90,11 @@ class Soup extends Component {
   }
 }
 
+function mapStateToProps({ soupsReducer }) {
+  return { soupsReducer };
+}
+
 export default connect(
-  null,
+  mapStateToProps,
   actions
 )(Soup);

@@ -17,6 +17,7 @@ class Dashboard extends Component {
   }
 
   render() {
+    console.log("DashboardProps=", this.props);
     return (
       <div className="Dashboard">
         <h2>Dashboard</h2>
@@ -24,7 +25,7 @@ class Dashboard extends Component {
         <span className="badge badge-success">
           {this.props.dateReducer.length > 0
             ? this.props.dateReducer[0].date
-            : "No Soups Today"}
+            : "--"}
         </span>
         <form
           className="form-group"
@@ -49,13 +50,11 @@ class Dashboard extends Component {
   }
 }
 
-function mapStateToProps({
-  soupsReducer,
-  updateSoup,
-  updateDate,
-  dateReducer
-}) {
-  return { soupsReducer, updateSoup, updateDate, dateReducer };
+function mapStateToProps({ soupsReducer, dateReducer }) {
+  return {
+    soupsReducer,
+    dateReducer
+  };
 }
 
 export default connect(

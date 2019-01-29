@@ -7,7 +7,7 @@ import * as actions from "../actions";
 
 class SoupList extends Component {
   componentDidMount() {
-    this.props.fetchSoups();
+    this.props.allSoups();
   }
 
   renderSoup() {
@@ -24,6 +24,7 @@ class SoupList extends Component {
   }
 
   render() {
+    console.log("SoupListProps=", this.props);
     return <div>{this.renderSoup()}</div>;
   }
 }

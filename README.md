@@ -4,6 +4,9 @@
 - in client -> npm install
 - in main directory npm run dev
 
+- Live site: [Parsley Soup](https://parsley-soups.herokuapp.com/)
+- Live dashboard: [Parsley Soup Dashboard](https://parsley-soups.herokuapp.com/dashboard)
+
 ### for database / cookie implementation
 
 - setup an MLab account at mlab.com
