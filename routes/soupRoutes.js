@@ -41,7 +41,6 @@ module.exports = app => {
   });
 
   app.put("/api/date/change", async (req, res) => {
-    console.log("req.body=", req.body);
     const id = "5c47d10fe7179a5449415445";
     const data = await Soups.findByIdAndUpdate(
       id,
@@ -51,7 +50,6 @@ module.exports = app => {
         if (err) {
           return res.status(500).send(err);
         } else {
-          console.log("sending data back", data);
           return res.send(data);
         }
       }

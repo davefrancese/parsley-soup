@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
 
 import "../styles/App.css";
 import * as actions from "../actions";
@@ -53,7 +52,6 @@ class Daily extends Component {
   }
 
   render() {
-    console.log(this.props);
     return (
       <div className="App">
         <div>
@@ -65,16 +63,13 @@ class Daily extends Component {
             <span className="badge badge-success">
               {this.props.dateReducer.length > 0
                 ? this.props.dateReducer[0].date
-                : "No Soups Today"}
+                : "Oops! Something went wrong"}
             </span>
           </p>
           <div className="App-soups">
             <ul className="list-group">{this.renderDailySoups()}</ul>
           </div>
         </div>
-        <Link to="/dashboard">
-          <p className="secret">.</p>
-        </Link>
       </div>
     );
   }

@@ -8,7 +8,8 @@ const soupSchema = new Schema({
   isOut: Boolean,
   isLow: Boolean,
   ingredients: [String],
-  description: String
+  description: String,
+  date: String
 });
 
 mongoose.model("soups", soupSchema);
