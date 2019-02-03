@@ -46,7 +46,7 @@ class Soup extends Component {
                       isOut: false
                     })
                   }
-                  className="btn btn-danger "
+                  className="btn btn-danger update-soup"
                 >
                   Remove
                 </button>
@@ -56,7 +56,7 @@ class Soup extends Component {
                       isLow: true
                     })
                   }
-                  className="btn btn-warning"
+                  className="btn btn-warning update-soup"
                 >
                   Getting Low
                 </button>
@@ -66,7 +66,7 @@ class Soup extends Component {
                       isOut: true
                     })
                   }
-                  className="btn btn-dark"
+                  className="btn btn-dark update-soup"
                 >
                   Ran Out
                 </button>
@@ -78,7 +78,7 @@ class Soup extends Component {
                     isDaily: true
                   })
                 }
-                className="btn btn-primary"
+                className="btn btn-primary update-soup"
               >
                 Make Daily
               </button>
