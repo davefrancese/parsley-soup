@@ -32,9 +32,10 @@ class Dashboard extends Component {
         >
           <input
             className="form-control form-control-sm date-input"
-            type="text"
+            type="date"
             name="date"
             placeholder="Today's Date"
+            data-provide="datepicker"
           />
           <button className="btn btn-primary save-date" type="submit">
             Save

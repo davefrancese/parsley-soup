@@ -32,6 +32,7 @@ module.exports = {
 
 - [ ] Rerender soupList component after updating soup action
 - [x] Update Date action to put event.target in database -> Rerender
+- [x] Date Validation
 - [x] Finish styling
 - [x] "Parsley Soups" as title
 - [x] Give a unique favicon
