@@ -37,4 +37,4 @@ module.exports = {
 - [x] Give a unique favicon
 - [x] Remove link to dashboard
 - [x] Rename dashboard path
-- [ ] Redeploy
+- [x] Redeploy
