@@ -4,15 +4,170 @@
 
 .App-soups {
   margin: 50px auto;
-  max-width: 500px;
+  /* max-width: 500px; */
   text-align: center;
 }
 
-.App-soups li {
-  background: #f5f0da;
+.title-span {
+  color: #02a951;
+  font-size: 0.5em;
+  margin: -15px 0 -10px 0;
 }
+
+/* .App-soups li {
+  background: #f5f0da;
+} */
 
 .Soup-type {
   font-size: 0.5rem;
   color: #9fce6a;
 }
+
+.full-title {
+  margin: 20px;
+}
+
+/* ----- DAILY SOUP LIST ----- */
+
+/* --- desktop --- */
+@media only screen and (min-width: 1200px) {
+  .daily-soup-list li {
+    height: 70px;
+    padding: 0 0 0 20px;
+    font-size: 2em;
+  }
+
+  .danger-badge {
+    background: red;
+    color: white;
+    height: 100%;
+    width: 150px;
+    margin-right: -1px;
+    padding-top: 15px;
+  }
+
+  .warning-badge {
+    background: orange;
+    color: white;
+    height: 100%;
+    width: 150px;
+    margin-right: -1px;
+    padding-top: 15px;
+  }
+}
+
+/* --- tablet ---  */
+@media only screen and (max-width: 1199px) and (min-width: 600px) {
+  .daily-soup-list li {
+    height: 70px;
+    padding: 0 0 0 20px;
+    font-size: 2em;
+  }
+
+  .danger-badge {
+    background: red;
+    color: white;
+    height: 100%;
+    width: 100px;
+    margin-right: -1px;
+    padding-top: 15px;
+  }
+
+  .warning-badge {
+    background: orange;
+    color: white;
+    height: 100%;
+    width: 100px;
+    margin-right: -1px;
+    padding-top: 15px;
+  }
+}
+
+/* --- phone --- */
+@media only screen and (max-width: 599px) {
+  .daily-soup-list li {
+    height: 70px;
+    padding: 0 0 0 20px;
+    font-size: 1.5em;
+  }
+
+  .danger-badge {
+    background: red;
+    color: white;
+    height: 100%;
+    width: 75px;
+    margin-right: -1px;
+    padding-top: 15px;
+  }
+
+  .warning-badge {
+    background: orange;
+    color: white;
+    height: 100%;
+    width: 75px;
+    margin-right: -1px;
+    padding-top: 15px;
+  }
+}
+
+.item-BlackBean {
+  background: #5c5c5c;
+  color: #c7c1ab;
+}
+
+.item-PotatoLeek {
+  background: #e8d68d;
+  color: #5c5553;
+}
+
+.item-GreenChilePotato {
+  background: #97d198;
+  color: #608560;
+}
+
+.item-Mushroom {
+  background: #998b6e;
+  color: #f5deb0;
+}
+
+.item-Mayocoba {
+  background: #c1c4ac;
+  color: #5d5e53;
+}
+
+.item-RedLentil {
+  background: #c47e66;
+  color: #634034;
+}
+
+.item-PintoBean {
+  background: #6b5e4e;
+  color: #d4ba9a;
+}
+
+.item-Vegetable {
+  background: #4a9151;
+  color: #9fe59f;
+}
+
+.item-CabbageBeet {
+  background: #5c4351;
+  color: #d99ebf;
+}
+
+.item-TomatoBasil {
+  background: #c45f59;
+  color: #66312e;
+}
+
+.item-BroccoliCheddar {
+  background: #dedd6c;
+  color: #696833;
+}
+
+.item-ItalianWhiteBean {
+  background: #b2ae9e;
+  color: #42413b;
+}
+
+/* ----- DAILY BADGES ----- */

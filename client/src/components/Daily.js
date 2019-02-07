@@ -17,6 +17,13 @@ class Daily extends Component {
     this.props.fetchDate();
   }
 
+  shorten(soupName) {
+    return soupName
+      .split("")
+      .filter(x => x !== " ")
+      .join("");
+  }
+
   renderDailySoups() {
     if (this.props.soupsReducer.length > 0) {
       const { soupsReducer } = this.props;
@@ -28,16 +35,18 @@ class Daily extends Component {
           return (
             <li
               key={soup.name}
-              className="list-group-item d-flex justify-content-between align-items-center"
+              className={` d-flex justify-content-between align-items-center item-${this.shorten(
+                soup.name
+              )}`}
             >
               {soup.name}
 
               {soup.isOut ? (
-                <span className="badge badge-danger badge-pill">Out</span>
+                <span className="danger-badge">Out</span>
               ) : soup.isOut && soup.isLow ? (
                 <span className="badge badge-danger badge-pill">Out</span>
               ) : soup.isLow ? (
-                <span className="badge badge-warning badge-pill">Low</span>
+                <span className="warning-badge">Low</span>
               ) : null}
             </li>
           );
@@ -54,8 +63,10 @@ class Daily extends Component {
   render() {
     return (
       <div className="App">
-        <div>
-          <h1>Soups of the Day</h1>
+        <div className="full-title">
+          <h1 className="title">
+            Soups <span className="title-span">of the</span> Day
+          </h1>
           <h4>Soup, seasonal</h4>
           <p className="sub-title">
             Made from scratch
@@ -66,9 +77,11 @@ class Daily extends Component {
                 : "Oops! Something went wrong"}
             </span>
           </p>
-          <div className="App-soups">
-            <ul className="list-group">{this.renderDailySoups()}</ul>
-          </div>
+        </div>
+        <div className="App-soups">
+          <ul className="list-group daily-soup-list">
+            {this.renderDailySoups()}
+          </ul>
         </div>
       </div>
     );

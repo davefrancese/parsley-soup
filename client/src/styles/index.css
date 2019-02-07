@@ -4,24 +4,28 @@
 
 body {
   background: #f5f0da;
-  margin: 20px;
 }
 
 h1 {
+  font-size: 4em;
   color: #02a951;
+  line-height: 0.75em;
+  margin-bottom: 20px;
+}
+
+h4 {
+  color: #02a951;
+  font-size: 2em;
 }
 
 h6 {
   color: #02a951;
 }
 
-h4 {
-  color: #02a951;
-}
-
 .sub-title {
   color: #02a951;
   margin-top: -5px;
+  font-size: 1.5em;
 }
 
 .secret {
