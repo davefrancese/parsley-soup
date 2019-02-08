@@ -1,15 +1,69 @@
+/* creme: #f5f0da */
+/* dark creme: #918e81 */
+/* dark green: #02a951 */
+/* light green: #9fce6a */
+
 .Dashboard {
-  background: #02a951;
-  padding: 10px;
-  margin: 20px;
+  padding: 50px;
+}
+
+/* --- desktop --- */
+@media only screen and (min-width: 1200px) {
+  .dashboard-topline {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+/* --- tablet ---  */
+@media only screen and (max-width: 1199px) and (min-width: 600px) {
+  .dashboard-topline {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+/* --- phone --- */
+@media only screen and (max-width: 599px) {
+  h1 {
+    font-size: 0.2em;
+  }
+}
+
+h2 {
+  color: #02a951;
+  font-size: 3em;
+  margin-bottom: -10px;
+}
+
+h3 {
+  color: #02a951;
+}
+
+.sub {
+  color: #02a951;
+}
+
+.date-section {
+  margin: 0 20px;
+}
+
+input {
+  margin-top: 5px;
+}
+
+.set-date {
+  margin-bottom: -1px;
+  color: #02a951;
 }
 
 .card {
-  margin-top: 5px;
+  /* margin-top: 5px; */
 }
 
 button {
   margin-right: 5px;
+  background: grey;
 }
 
 span {
@@ -25,7 +79,10 @@ span {
 }
 
 .back-link {
-  margin-bottom: 5px;
+  border: none;
+  border-radius: 5px;
+  background: #918e81;
+  color: #f5f0da;
 }
 
 .update-complete {
@@ -34,4 +91,31 @@ span {
 
 .update-soup {
   margin-top: 5px;
+}
+
+/* ----- SOUP COMPONENT ----- */
+
+.soup-card {
+  border: 1px solid #d9d4c1;
+  margin-top: 5px;
+  border-radius: 5px;
+}
+
+.daily-soup {
+  background: #e8e3ce;
+}
+
+.soup-header {
+  height: 50px;
+  border-bottom: 1px solid #d9d4c1;
+  padding: 20px;
+  color: #02a951;
+}
+
+.daily-star {
+}
+
+.daily-badge {
+  margin-top: -10px;
+  color: #02a951;
 }

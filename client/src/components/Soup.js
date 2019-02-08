@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import "../styles/Dashboard.css";
 
+import "../styles/Dashboard.css";
 import actions from "../actions";
 
 class Soup extends Component {
@@ -9,16 +9,24 @@ class Soup extends Component {
     const { soup } = this.props;
     return (
       <div>
-        <div key={soup.name} className="card">
+        <div
+          key={soup.name}
+          className={`soup-card ${soup.isDaily ? "daily-soup" : null}`}
+        >
           <div
-            className={`card-header ${
-              soup.isDaily ? "alert alert-primary" : null
+            className={`soup-header ${
+              soup.isDaily ? "soup-header-daily" : null
             }`}
           >
             {soup.isDaily ? (
-              <span className="badge badge-primary badge-pill">Daily Soup</span>
+              <span className="daily-badge">
+                Daily{" "}
+                <span className="daily-star">
+                  <i class="fas fa-star" />
+                </span>
+              </span>
             ) : (
-              "Soup"
+              <span>Soup</span>
             )}
           </div>
           <div className="card-body">
@@ -48,7 +56,7 @@ class Soup extends Component {
                   }
                   className="btn btn-danger update-soup"
                 >
-                  Remove
+                  <i class="fas fa-times" />
                 </button>
                 <button
                   onClick={() =>
@@ -58,7 +66,7 @@ class Soup extends Component {
                   }
                   className="btn btn-warning update-soup"
                 >
-                  Getting Low
+                  <i class="fas fa-battery-quarter" />
                 </button>
                 <button
                   onClick={() =>
@@ -68,7 +76,7 @@ class Soup extends Component {
                   }
                   className="btn btn-dark update-soup"
                 >
-                  Ran Out
+                  <i class="fas fa-battery-empty" />
                 </button>
               </div>
             ) : (

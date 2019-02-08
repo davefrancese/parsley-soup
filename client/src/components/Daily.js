@@ -54,7 +54,15 @@ class Daily extends Component {
     } else {
       return (
         <div>
-          <p>Hmm...where are those soups?</p>
+          <iframe
+            title="No Soup For You!"
+            src="https://giphy.com/embed/1UBEgUWneaVVu"
+            width="480"
+            height="360"
+            frameBorder="0"
+            class="giphy-embed"
+            allowFullScreen
+          />
         </div>
       );
     }
