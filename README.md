@@ -8,9 +8,9 @@
 
 [Parsley Soup](https://parsley-soups.herokuapp.com/)
 
-#### Live dashboard:
+#### Walkthrough Video + dashboard
 
-[Parsley Soup Dashboard](https://parsley-soups.herokuapp.com/dashboard)
+[Walkthrough](https://www.youtube.com/watch?v=FM3WQoJMSF4&t=180s)
 
 ### for database / cookie implementation
 

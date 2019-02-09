@@ -11,7 +11,7 @@ class App extends Component {
       <div className="App">
         <BrowserRouter>
           <div>
-            <Route exact path="/soupeditordashboard" component={Dashboard} />
+            <Route exact path="/xxxxxxx" component={Dashboard} />
             <Route exact path="/" component={Daily} />
           </div>
         </BrowserRouter>

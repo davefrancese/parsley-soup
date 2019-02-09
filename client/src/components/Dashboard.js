@@ -23,7 +23,7 @@ class Dashboard extends Component {
           <div className="dashboard-topline">
             <div>
               <h2>Dashboard</h2>
-              <p className="sub">After updating, refresh page.</p>
+              {/* <p className="sub">After updating, refresh page.</p> */}
             </div>
             <Link to="/">
               <button className="back-link">Return to Daily Soups</button>
